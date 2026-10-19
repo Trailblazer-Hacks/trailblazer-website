@@ -5,7 +5,7 @@
 - Next.js static production build completed with the home page exported to `out/index.html`.
 - TypeScript check passed.
 - Three event-content unit tests passed.
-- Browser acceptance: 13 passed, one deliberately skipped (desktop-only pointer interaction on mobile).
+- Browser acceptance: 24 passed, two deliberately skipped (desktop-only pointer interaction on mobile and mobile-only static-art check on desktop).
 - Desktop and mobile automated WCAG A/AA checks reported no violations after fixing section-number opacity. This is not a certification or a substitute for manual assistive-technology testing.
 - Registration navigation, all anchor destinations, native FAQ expansion, keyboard skip link, reduced motion, and essential no-JavaScript content passed.
 - Pointer depth resets when motion preference changes and the scene stops offscreen.
@@ -31,3 +31,7 @@ These are local build measurements, not live-host network latency or Core Web Vi
 - The year, registration destination, program, prizes, meals and participant policies remain organizer-confirmation blockers. The mockup labels unknowns and contains no fabricated statistics or sponsor claims.
 - Reference review covered three hero screenshot views and public text. The supplied YouTube video could only be identified by title, not watched or transcribed.
 - No public deployment or registration launch has occurred. The PR is for team review.
+
+## Requirement-level evidence
+
+See [the acceptance matrix](acceptance-matrix.md) for each requested capability, the actual check performed, its observed result, measured improvements, and unverified boundaries. Counts alone are not the acceptance argument.
