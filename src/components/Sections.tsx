@@ -126,7 +126,7 @@ const flightPlan = [
     tag: 'ORGANIZERS',
   },
   {
-    time: '8 AM',
+    time: event.startTime,
     label: 'The day begins.',
     description: 'The event opens. Bring your curiosity and get ready to build.',
     tag: 'EVENT START',
@@ -139,7 +139,7 @@ const flightPlan = [
     tag: 'PROGRAM TO COME',
   },
   {
-    time: '8 PM',
+    time: event.endTime,
     label: 'One day. A new beginning.',
     description: 'The event closes. Take your ideas beyond the launch pad.',
     tag: 'EVENT CLOSE',
@@ -169,7 +169,8 @@ export function Schedule() {
         <div className="schedule-orbit" aria-hidden="true">
           <Spark />
           <span>
-            12<span>HOUR EVENT</span>
+            {event.durationHours}
+            <span>HOUR EVENT</span>
           </span>
         </div>
       </div>
@@ -251,7 +252,7 @@ const questions = [
   ],
   [
     'When and where is it?',
-    `The announced date is ${event.dateLabel}, ${event.hours}, at ${event.venue}, ${event.address}. The event year is awaiting final confirmation. Organizer setup starts at 7 AM.`,
+    `The announced date is ${event.dateLabel}, ${event.hours}, at ${event.venue}, ${event.address}. The event year is awaiting final confirmation. Organizer setup starts at ${event.setupTime}.`,
   ],
   [
     'How do I register?',
@@ -308,7 +309,9 @@ export function Registration() {
         <SectionLabel number="06">YOUR NEXT CHAPTER</SectionLabel>
         <Spark />
       </div>
-      <p className="eyebrow">NOVEMBER 14 · SUNNYVALE, CA</p>
+      <p className="eyebrow">
+        {event.dateLabel.toUpperCase()} · {event.cityLabel.toUpperCase()}
+      </p>
       <h2 id="registration-title">
         EVERY GREAT IDEA
         <br />

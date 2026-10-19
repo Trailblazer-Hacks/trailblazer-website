@@ -4,7 +4,7 @@
 
 - Next.js static production build completed with the home page exported to `out/index.html`.
 - TypeScript check passed.
-- Two event-content unit tests passed.
+- Three event-content unit tests passed.
 - Browser acceptance: 13 passed, one deliberately skipped (desktop-only pointer interaction on mobile).
 - Desktop and mobile automated WCAG A/AA checks reported no violations after fixing section-number opacity. This is not a certification or a substitute for manual assistive-technology testing.
 - Registration navigation, all anchor destinations, native FAQ expansion, keyboard skip link, reduced motion, and essential no-JavaScript content passed.

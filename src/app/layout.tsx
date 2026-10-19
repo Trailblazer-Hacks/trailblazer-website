@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { event } from '@/content/event';
 
 export const metadata: Metadata = {
   title: 'Trailblazer Hacks | Small spark. Big liftoff.',
-  description:
-    'A new high-school hackathon by the Cupertino Entrepreneurship Society. November 14, 8 AM–8 PM, at Walmart in Sunnyvale. Registration details coming soon.',
+  description: `A new high-school hackathon by ${event.organizer}. ${event.dateLabel}, ${event.hours}, at ${event.venue} in ${event.cityLabel}. Registration details coming soon.`,
   icons: { icon: '/icon.svg' },
   openGraph: {
     title: 'Trailblazer Hacks',
-    description: 'Small spark. Big liftoff. November 14 · Sunnyvale.',
+    description: `Small spark. Big liftoff. ${event.dateLabel} · ${event.cityLabel}.`,
     type: 'website',
   },
 };

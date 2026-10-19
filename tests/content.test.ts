@@ -13,3 +13,7 @@ test('does not invent a registration destination or event year', () => {
   assert.equal(event.registrationUrl, null);
   assert.equal(event.year, null);
 });
+
+test('schedule labels derive from the same public start and end facts', () => {
+  assert.equal(event.hours, `${event.startTime} – ${event.endTime}`);
+});

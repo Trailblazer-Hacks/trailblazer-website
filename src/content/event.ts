@@ -1,9 +1,16 @@
 /** Public, organizer-supplied facts. Null means not yet confirmed. */
+const startTime = '8 AM';
+const endTime = '8 PM';
+
 export const event = {
   name: 'Trailblazer Hacks',
   dateLabel: 'November 14',
   year: null as number | null,
-  hours: '8 AM – 8 PM',
+  startTime,
+  endTime,
+  hours: `${startTime} – ${endTime}`,
+  durationHours: 12,
+  cityLabel: 'Sunnyvale, CA',
   setupTime: '7 AM',
   venue: 'Walmart',
   address: '1375 Crossman Ave, Sunnyvale, CA',
