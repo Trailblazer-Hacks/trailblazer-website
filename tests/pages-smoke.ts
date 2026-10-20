@@ -24,7 +24,7 @@ test('published Pages URL serves the frontend with working styles, scripts and a
   await page.locator('summary').filter({ hasText: 'Who is organizing Trailblazer Hacks?' }).click();
   await expect(page.locator('details[open]')).toContainText('Cupertino Entrepreneurship Society');
   const icon = await page.locator('link[rel=icon]').getAttribute('href');
-  expect(icon).toBe('/trailblazer-website/icon.svg');
+  expect(icon).toBe(`${process.env.EXPECTED_BASE_PATH ?? ''}/icon.svg`);
   expect((await page.request.get(new URL(icon!, page.url()).href)).status()).toBe(200);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   expect(failed).toEqual([]);
