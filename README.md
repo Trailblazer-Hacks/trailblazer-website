@@ -20,7 +20,20 @@ npm run preview
 # http://localhost:4173
 ```
 
-`out/` is the deployable static site. No deployment is configured or authorized yet. Use a root-domain static host. GitHub project-subpath hosting would require an explicit base-path change and retest.
+`out/` is the deployable static site. GitHub Pages publishes it at <https://trailblazer-hacks.github.io/trailblazer-website/> using `.github/workflows/pages.yml`.
+
+Pages must use **GitHub Actions** as its source, not “Deploy from a branch.” Publishing the repository root renders this README instead of building Next.js.
+
+The deployment workflow runs `npm run build:pages`, which sets `NEXT_PUBLIC_BASE_PATH=/trailblazer-website`, then validates the actual project-path export in desktop/mobile browsers before uploading only `out/`. Pull requests run this validation without deploying. Pushes to `main` deploy after validation.
+
+```sh
+npm run build:pages
+npm run test:pages
+# Verify the public deployment after it finishes:
+PAGES_URL=https://trailblazer-hacks.github.io/trailblazer-website/ npm run test:pages:live
+```
+
+Normal `npm run build` retains root-path behavior for local previews or a future root-domain host. Public asset paths use `src/lib/paths.ts`; do not hardcode root URLs for new artwork.
 
 ## Checks
 

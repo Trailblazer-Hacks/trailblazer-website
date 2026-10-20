@@ -1,3 +1,4 @@
+import { publicAsset } from '@/lib/paths';
 import { event } from '@/content/event';
 import { Spark } from './Rocket';
 
@@ -43,7 +44,7 @@ export function About() {
           </a>
           <div className="about-stamp">
             <img
-              src="/brand-patch.webp"
+              src={publicAsset('/brand-patch.webp')}
               width="94"
               height="94"
               alt="Original Trailblazer Hacks pixel-rocket mission patch"

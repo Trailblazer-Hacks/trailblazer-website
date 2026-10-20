@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { publicAsset } from '@/lib/paths';
 import { event } from '@/content/event';
 
 export const metadata: Metadata = {
   title: 'Trailblazer Hacks | Small spark. Big liftoff.',
   description: `A new high-school hackathon by ${event.organizer}. ${event.dateLabel}, ${event.hours}, at ${event.venue} in ${event.cityLabel}. Registration details coming soon.`,
-  icons: { icon: '/icon.svg' },
+  icons: { icon: publicAsset('/icon.svg') },
   openGraph: {
     title: 'Trailblazer Hacks',
     description: `Small spark. Big liftoff. ${event.dateLabel} · ${event.cityLabel}.`,

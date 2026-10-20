@@ -11,7 +11,10 @@
     "test:e2e": "playwright test",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "capture": "node scripts/capture.mjs"
+    "capture": "node scripts/capture.mjs",
+    "build:pages": "NEXT_PUBLIC_BASE_PATH=/trailblazer-website next build",
+    "test:pages": "node scripts/prepare-pages-preview.mjs && playwright test --config playwright.pages.config.ts",
+    "test:pages:live": "playwright test --config playwright.pages.config.ts"
   },
   "engines": {
     "node": ">=22.0.0"
