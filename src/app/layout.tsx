@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import './redesign.css';
-import { event } from '@/content/event';
 import { publicAsset } from '@/lib/paths';
+import { event } from '@/content/event';
 
 export const metadata: Metadata = {
   title: 'Trailblazer Hacks | Small spark. Big liftoff.',
@@ -14,7 +13,6 @@ export const metadata: Metadata = {
     type: 'website',
   },
 };
-
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
